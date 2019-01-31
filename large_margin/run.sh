@@ -12,13 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#!/bin/bash
+# #!/bin/bash
+# set -e
+# set -x
+
+# virtualenv -p python3 .
+# source ./bin/activate
+
+# pip install tensorflow
+# pip install -r large_margin/requirements.txt
+# python -m large_margin.margin_loss_test
+
+cd ..
 set -e
 set -x
-
-virtualenv -p python3 .
-source ./bin/activate
-
-pip install tensorflow
-pip install -r large_margin/requirements.txt
+source activate python3.6
+CUDA_VISIBLE_DEVICES="0,1"
 python -m large_margin.margin_loss_test
